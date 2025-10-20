@@ -16,4 +16,7 @@ The pipeline is defined in `.github/workflows/main.yml`  and performs the follow
 5.  **Pushes** the built image to my DockerHub repository.
 
 ## Application
-The application is a simple "Hello, World!" [cite_start]Node.js/Express server.
+The application is a simple "Hello, World!" Node.js/Express server.
+
+
+<img width="1829" height="844" alt="Screenshot (30)" src="https://github.com/user-attachments/assets/9221fef2-7a47-4d2e-811a-f216af9090ee" />
