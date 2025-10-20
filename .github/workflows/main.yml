@@ -1,27 +1,28 @@
 # Name of your workflow
 name: Build and Push Docker Image
 
-# Configure the trigger 
+# Configure the trigger
+# 'on:' must have NO indentation
 on:
   push:
     branches: [ "main" ] # Triggers on push to the main branch
 
-# Define the jobs to run
+# 'jobs:' must have NO indentation
 jobs:
-  [cite_start]build-and-push: # Job ID 
-    [cite_start]runs-on: ubuntu-latest # Use a GitHub-hosted runner [cite: 22]
+  build-and-push: # This 'build-and-push:' block IS indented
+    runs-on: ubuntu-latest # This IS indented
 
-    [cite_start]steps: # Series of tasks within the job [cite: 23]
+    steps: # This 'steps:' block IS indented
       - name: Check out the repo
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }} # Uses the secret you created
-          password: ${{ secrets.DOCKERHUB_TOKEN }}   # Uses the secret you created
+          username: ${{ secrets.DOCKERHUB_rafanshafi }}
+          password: ${{ secrets.DOCKERHUB_dckr_pat_qegiJRgnJzbEyjBzt7BlfCqI28M }}
 
-      - [cite_start]name: Build and push Docker image [cite: 26]
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
